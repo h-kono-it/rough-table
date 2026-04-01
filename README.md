@@ -2,6 +2,15 @@
 
 A vanilla JS library that renders hand-drawn style borders on HTML tables using [Rough.js](https://roughjs.com/). Just add a class — no configuration required.
 
+## How it works
+
+Most "sketch style" table libraries render everything — including cell text — onto a canvas or SVG. rough-table takes a different approach:
+
+- The **original `<table>` element is kept in the DOM as-is**, so text, links, and semantic structure are fully intact.
+- Only the **borders are drawn as an SVG overlay**, positioned behind the table with `pointer-events: none`.
+
+This means screen readers, search engines, and keyboard navigation all work exactly as they would with a plain HTML table — the hand-drawn look is purely cosmetic.
+
 ## Demo
 
 ![rough-table demo](https://raw.githubusercontent.com/h-kono-it/rough-table/main/examples/demo.png)
