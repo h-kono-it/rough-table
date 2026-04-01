@@ -4,7 +4,7 @@ A vanilla JS library that renders hand-drawn style borders on HTML tables using 
 
 ## Demo
 
-![rough-table demo](https://raw.githubusercontent.com/h-kono-it/rough-table/main/demo.png)
+![rough-table demo](https://raw.githubusercontent.com/h-kono-it/rough-table/main/examples/demo.png)
 
 ## Install
 
