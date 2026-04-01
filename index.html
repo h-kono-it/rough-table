@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>rough-table.js デモ</title>
+  <script src="https://unpkg.com/roughjs@latest/bundled/rough.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Kiwi Maru', serif; padding: 50px; background: #fffdf9; color: #333; }
+    h1 { margin-bottom: 0.2em; }
+    p  { margin-top: 0; color: #666; }
+    h2 { margin-top: 2.5em; font-size: 0.9rem; color: #888; font-weight: normal; }
+    code { background: #f0ece4; padding: 2px 6px; border-radius: 3px; font-size: 0.85em; }
+
+    .rough-table th,
+    .rough-table td,
+    .rough-table-outer th,
+    .rough-table-outer td { padding: 10px 28px; text-align: center; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 3em 4em;
+      margin-top: 1.5em;
+    }
+    .grid-item h3 { margin: 0 0 0.8em; font-size: 0.85rem; color: #888; font-weight: normal; }
+  </style>
+</head>
+<body>
+
+<h1>rough-table.js</h1>
+<p><code>class="rough-table"</code> をつけるだけ。</p>
+
+<!-- ===== mode × border マトリクス ===== -->
+<h2>mode × border パターン早見表</h2>
+<div class="grid">
+
+  <div class="grid-item">
+    <h3><code>mode="cell"</code> / <code>border="full"</code>（デフォルト）</h3>
+    <table class="rough-table">
+      <thead><tr><th>項目</th><th>値</th></tr></thead>
+      <tbody>
+        <tr><td>A</td><td>100</td></tr>
+        <tr><td>B</td><td>200</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grid-item">
+    <h3><code>mode="cell"</code> / <code>border="outer"</code></h3>
+    <table class="rough-table" data-border="outer">
+      <thead><tr><th>項目</th><th>値</th></tr></thead>
+      <tbody>
+        <tr><td>A</td><td>100</td></tr>
+        <tr><td>B</td><td>200</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grid-item">
+    <h3><code>mode="cell"</code> / <code>border="inner"</code></h3>
+    <table class="rough-table" data-border="inner">
+      <thead><tr><th>項目</th><th>値</th></tr></thead>
+      <tbody>
+        <tr><td>A</td><td>100</td></tr>
+        <tr><td>B</td><td>200</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grid-item">
+    <h3><code>mode="cell"</code> / <code>border="rows"</code></h3>
+    <table class="rough-table" data-border="rows">
+      <thead><tr><th>項目</th><th>値</th></tr></thead>
+      <tbody>
+        <tr><td>A</td><td>100</td></tr>
+        <tr><td>B</td><td>200</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grid-item">
+    <h3><code>mode="solid"</code> / <code>border="full"</code></h3>
+    <table class="rough-table" data-mode="solid">
+      <thead><tr><th>項目</th><th>値</th></tr></thead>
+      <tbody>
+        <tr><td>A</td><td>100</td></tr>
+        <tr><td>B</td><td>200</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grid-item">
+    <h3><code>mode="solid"</code> / <code>border="outer"</code></h3>
+    <table class="rough-table" data-mode="solid" data-border="outer">
+      <thead><tr><th>項目</th><th>値</th></tr></thead>
+      <tbody>
+        <tr><td>A</td><td>100</td></tr>
+        <tr><td>B</td><td>200</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grid-item">
+    <h3><code>mode="solid"</code> / <code>border="inner"</code></h3>
+    <table class="rough-table" data-mode="solid" data-border="inner">
+      <thead><tr><th>項目</th><th>値</th></tr></thead>
+      <tbody>
+        <tr><td>A</td><td>100</td></tr>
+        <tr><td>B</td><td>200</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grid-item">
+    <h3><code>mode="solid"</code> / <code>border="rows"</code></h3>
+    <table class="rough-table" data-mode="solid" data-border="rows">
+      <thead><tr><th>項目</th><th>値</th></tr></thead>
+      <tbody>
+        <tr><td>A</td><td>100</td></tr>
+        <tr><td>B</td><td>200</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- ===== outer クラスパターン（MDパーサー対応） ===== -->
+<h2>outer クラスパターン — MDパーサーで生成されたテーブルに外側からオプションを渡す</h2>
+<p style="font-size:0.85rem;color:#888;">ブログ等のMDパーサーはテーブルにクラスをつけられないことが多い。外側のdivだけ書けばOK。</p>
+
+<div class="rough-table-outer" data-mode="solid" data-border="rows" data-stroke="#2c7a4b">
+  <!-- MDパーサーが↓を生成するイメージ -->
+  <table>
+    <thead><tr><th>日付</th><th>内容</th><th>担当</th></tr></thead>
+    <tbody>
+      <tr><td>4/1</td><td>キックオフ</td><td>Alice</td></tr>
+      <tr><td>4/8</td><td>設計レビュー</td><td>Bob</td></tr>
+      <tr><td>4/15</td><td>実装完了</td><td>Carol</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== カスタムスタイル例 ===== -->
+<h2>カスタム例（<code>mode="solid" border="rows" data-stroke="#c0392b" data-roughness="1.5"</code>）</h2>
+<table class="rough-table" data-mode="solid" data-border="rows" data-stroke="#c0392b" data-roughness="1.5">
+  <thead>
+    <tr><th>名前</th><th>スコア</th><th>コメント</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Alice</td><td>92</td><td>excellent</td></tr>
+    <tr><td>Bob</td><td>85</td><td>good</td></tr>
+    <tr><td>Carol</td><td>78</td><td>fair</td></tr>
+  </tbody>
+</table>
+
+<script src="rough-table.js"></script>
+</body>
+</html>

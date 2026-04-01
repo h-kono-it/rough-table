@@ -1,0 +1,38 @@
+{
+  "name": "rough-table",
+  "version": "0.1.0",
+  "description": "A vanilla JS library that renders hand-drawn style borders on HTML tables using Rough.js. Just add a class.",
+  "main": "rough-table.js",
+  "files": [
+    "rough-table.js",
+    "rough-table.min.js"
+  ],
+  "scripts": {
+    "build": "terser rough-table.js -o rough-table.min.js --comments '/^!/'",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "rough",
+    "roughjs",
+    "table",
+    "hand-drawn",
+    "sketch",
+    "border",
+    "vanilla"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/h-kono-it/rough-table.git"
+  },
+  "homepage": "https://github.com/h-kono-it/rough-table",
+  "bugs": {
+    "url": "https://github.com/h-kono-it/rough-table/issues"
+  },
+  "peerDependencies": {
+    "roughjs": ">=4.0.0"
+  },
+  "devDependencies": {
+    "terser": "^5.39.0"
+  }
+}
