@@ -67,7 +67,7 @@ Set via `data-*` attributes on the `<table>` (pattern A) or the outer element (p
 
 | Attribute | Description | Default |
 |---|---|---|
-| `data-mode` | Drawing mode: `cell` or `solid` | `cell` |
+| `data-mode` | Drawing mode: `cell` or `solid` | `solid` |
 | `data-border` | Border pattern (see below) | `full` |
 | `data-roughness` | How rough the lines look | `1.5` |
 | `data-stroke` | Line color | `#444` |
@@ -78,8 +78,8 @@ Set via `data-*` attributes on the `<table>` (pattern A) or the outer element (p
 
 | Value | Description |
 |---|---|
-| `cell` (default) | Draws borders cell by cell — like stamping each cell individually |
-| `solid` | Draws the outer frame first, then adds inner grid lines — closer to how you'd draw a table by hand |
+| `cell` | Draws borders cell by cell — like stamping each cell individually |
+| `solid` (default) | Draws the outer frame first, then adds inner grid lines — closer to how you'd draw a table by hand |
 
 ### `data-border`
 

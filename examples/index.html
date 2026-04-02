@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>rough-table.js デモ</title>
   <script src="https://unpkg.com/roughjs@latest/bundled/rough.js"></script>
+  <script src="../rough-table.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Kiwi Maru', serif; padding: 50px; background: #fffdf9; color: #333; }
@@ -19,7 +20,7 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 3em 4em;
       margin-top: 1.5em;
     }
@@ -36,8 +37,8 @@
 <div class="grid">
 
   <div class="grid-item">
-    <h3><code>mode="cell"</code> / <code>border="full"</code>（デフォルト）</h3>
-    <table class="rough-table">
+    <h3><code>mode="cell"</code> / <code>border="full"</code></h3>
+    <table class="rough-table" data-mode="cell">
       <thead><tr><th>項目</th><th>値</th></tr></thead>
       <tbody>
         <tr><td>A</td><td>100</td></tr>
@@ -48,7 +49,7 @@
 
   <div class="grid-item">
     <h3><code>mode="cell"</code> / <code>border="outer"</code></h3>
-    <table class="rough-table" data-border="outer">
+    <table class="rough-table" data-mode="cell" data-border="outer">
       <thead><tr><th>項目</th><th>値</th></tr></thead>
       <tbody>
         <tr><td>A</td><td>100</td></tr>
@@ -59,7 +60,7 @@
 
   <div class="grid-item">
     <h3><code>mode="cell"</code> / <code>border="inner"</code></h3>
-    <table class="rough-table" data-border="inner">
+    <table class="rough-table" data-mode="cell" data-border="inner">
       <thead><tr><th>項目</th><th>値</th></tr></thead>
       <tbody>
         <tr><td>A</td><td>100</td></tr>
@@ -70,7 +71,7 @@
 
   <div class="grid-item">
     <h3><code>mode="cell"</code> / <code>border="rows"</code></h3>
-    <table class="rough-table" data-border="rows">
+    <table class="rough-table" data-mode="cell" data-border="rows">
       <thead><tr><th>項目</th><th>値</th></tr></thead>
       <tbody>
         <tr><td>A</td><td>100</td></tr>
@@ -80,7 +81,7 @@
   </div>
 
   <div class="grid-item">
-    <h3><code>mode="solid"</code> / <code>border="full"</code></h3>
+    <h3><code>mode="solid"</code> / <code>border="full"</code>（デフォルト）</h3>
     <table class="rough-table" data-mode="solid">
       <thead><tr><th>項目</th><th>値</th></tr></thead>
       <tbody>

@@ -31,7 +31,7 @@
     stroke: '#444',
     strokeWidth: 2,
     bowing: 1,
-    mode: 'cell',
+    mode: 'solid',
     border: 'full',
   };
 
