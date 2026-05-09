@@ -155,6 +155,21 @@
   </tbody>
 </table>
 
+<!-- ===== transform: scale() テスト ===== -->
+<h2><code>transform: scale(1.5)</code> 環境でのズレ確認（issue #1）</h2>
+<p style="font-size:0.85rem;color:#888;">枠線がテーブルのセルに正しく重なっていれば OK。</p>
+<div style="transform: scale(1.5); transform-origin: top left; margin-bottom: 6em;">
+  <div class="rough-table-outer" data-mode="solid" data-border="full">
+    <table>
+      <thead><tr><th>項目</th><th>値</th><th>備考</th></tr></thead>
+      <tbody>
+        <tr><td>A</td><td>100</td><td>ok</td></tr>
+        <tr><td>B</td><td>200</td><td>ok</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
 <script src="rough-table.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 {
   "name": "rough-table",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A vanilla JS library that renders hand-drawn style borders on HTML tables using Rough.js. Just add a class.",
   "main": "rough-table.js",
   "files": [

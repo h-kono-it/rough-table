@@ -94,6 +94,9 @@
     });
     svg.setAttribute('width', table.offsetWidth);
     svg.setAttribute('height', table.offsetHeight);
+    const tableRect = table.getBoundingClientRect();
+    svg.setAttribute('viewBox', `0 0 ${tableRect.width} ${tableRect.height}`);
+    svg.setAttribute('preserveAspectRatio', 'none');
     container.insertBefore(svg, table);
     table[SVG_ATTR] = svg;
 
@@ -106,7 +109,6 @@
       bowing: opts.bowing,
     };
 
-    const tableRect = table.getBoundingClientRect();
     const rows = Array.from(table.rows);
 
     if (opts.mode === 'solid') {
